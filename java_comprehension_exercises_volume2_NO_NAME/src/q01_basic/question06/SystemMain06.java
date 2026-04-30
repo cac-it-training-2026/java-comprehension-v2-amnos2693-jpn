@@ -13,15 +13,22 @@ public class SystemMain06 {
 		int age = 28;
 		int rank = 2;
 
+		System.out.println("---CREATE MEMBER DATA---");
+
 		try {
-		} catch (NumberFormatException e) throws IOException,NumberFormatException {
+			inputId = cr.inputNumber();
+			inputPassword = cr.inputString();
+
+			Member member = new Member(inputId, inputPassword, name, age, rank);
+
+			System.out.println("---SHOW MEMBER--- ");
+			member.showMember();
+
+		} catch (NumberFormatException | IOException e) {
 			System.out.println("error!");
 			e.printStackTrace();
 		}
-
-		System.out.println("---CREATE MEMBER DATA---");
-		//TODO ここから実装する
-
 	}
+	//TODO ここから実装する
 
 }

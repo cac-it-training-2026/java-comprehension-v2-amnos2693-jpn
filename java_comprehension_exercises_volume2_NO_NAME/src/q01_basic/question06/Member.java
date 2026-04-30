@@ -3,7 +3,6 @@ package q01_basic.question06;
 public class Member extends AbstMember {
 	private int id;
 	private String password;
-	private String name;
 	private int age;
 	private int rank;
 
