@@ -1,13 +1,21 @@
-package q02_advanced.question02;
+package q02_advanced.question03;
 
 public class Coupon {
 	private int id;
 	private double discountRate;
 	private String description;
 
+	/**
+	 * 
+	 */
 	public Coupon() {
 	}
 
+	/**
+	 * @param id
+	 * @param discountRate
+	 * @param description
+	 */
 	public Coupon(int id, double discountRate, String description) {
 		this.id = id;
 		this.discountRate = discountRate;
@@ -17,6 +25,11 @@ public class Coupon {
 	public static Coupon getInstance(int id, double discountRate, String description) {
 		Coupon coupon = new Coupon(id, discountRate, description);
 		return coupon;
+	}
+
+	@Override
+	public String toString() {
+		return "Coupon [id=" + id + ", discountRate=" + discountRate + ", description=" + description + "]";
 	}
 
 	/**
@@ -60,10 +73,4 @@ public class Coupon {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
-	@Override
-	public String toString() {
-		return "Coupon [id=" + id + ", discountRate=" + discountRate + ", description=" + description + "]";
-	}
-
 }

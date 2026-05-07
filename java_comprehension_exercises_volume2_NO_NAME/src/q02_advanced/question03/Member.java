@@ -1,6 +1,9 @@
-package q02_advanced.question02;
+package q02_advanced.question03;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import q02_advanced.question02.Coupon;
 
 public class Member {
 	private int id;
@@ -8,24 +11,28 @@ public class Member {
 	private String name;
 	private int age;
 	private int rank;
-	private ArrayList<Coupon> coupons;
+	private List<Coupon> coupons;
 
+	public Member() {
+	}
+
+	/**
+	 * @param id
+	 * @param password
+	 * @param age
+	 * @param rank
+	 * @param coupons
+	 */
 	public Member(int id, String password, String name, int age, int rank) {
-		this();
 		this.id = id;
 		this.password = password;
 		this.name = name;
 		this.age = age;
 		this.rank = rank;
-		this.coupons = new ArrayList<Coupon>();
-	}
-
-	public Member() {
 	}
 
 	public static Member getInstance(int id, String password, String name, int age, int rank) {
-
-		Member mem = new Member(id, password, name, age, rank);
+		Member member = new Member(id, password, name, age, rank);
 
 		Coupon coupon1 = Coupon.getInstance(1, 0.5, "最初の特典");
 		Coupon coupon2 = Coupon.getInstance(2, 0.25, "今月の特典");
@@ -34,10 +41,9 @@ public class Member {
 		couponLIst.add(coupon1);
 		couponLIst.add(coupon2);
 
-		mem.setCoupons(couponLIst);
+		member.setCoupons(couponLIst);
 
-		return mem;
-
+		return member;
 	}
 
 	@Override
@@ -48,7 +54,6 @@ public class Member {
 
 	public void showMember() {
 		System.out.println(this.toString());
-		System.out.println("**************************");
 
 	}
 
@@ -125,15 +130,14 @@ public class Member {
 	/**
 	 * @return coupons
 	 */
-	public ArrayList<Coupon> getCoupons() {
+	public List<Coupon> getCoupons() {
 		return coupons;
 	}
 
 	/**
 	 * @param coupons セットする coupons
 	 */
-	public void setCoupons(ArrayList<Coupon> coupons) {
+	public void setCoupons(List<Coupon> coupons) {
 		this.coupons = coupons;
 	}
-
 }

@@ -6,9 +6,26 @@ package q02_advanced.question03;
 class LoginService {
 
 	/**
+	 * @param memberStorage
+	 */
+	public LoginService(MemberStorage memberStorage) {
+		this.memberStorage = memberStorage;
+	}
+
+	/**
 	 * memberStorage Memberクラスのリスト一覧
 	 */
 	private MemberStorage memberStorage;
 
 	//TODO ここから処理を記述
+	public Member doLogin(int id, String password) {
+		Member loginMember = null;
+		for (Member member : memberStorage.getMembers()) {
+			if (member.getId() == id && member.getPassword().equals(password)) {
+				loginMember = member;
+				break;
+			}
+		}
+		return loginMember;
+	}
 }
