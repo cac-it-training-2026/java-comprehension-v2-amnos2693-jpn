@@ -17,6 +17,7 @@ public class Member {
 	}
 
 	/**
+	 * 引数ありコンストラクタ
 	 * @param id
 	 * @param password
 	 * @param age
